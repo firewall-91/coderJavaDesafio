@@ -21,6 +21,6 @@ if(NOMBRE != "") {
 let valor = prompt("ESC para salir")
 
 while(valor != "ESC") {
-    alert ("El usuario ingresó: " + valor)
+    alert ("Comando incorrecto")
     valor = prompt("Escribe ESC para salir")
 }
