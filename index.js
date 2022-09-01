@@ -22,5 +22,5 @@ let valor = prompt("ESC para salir")
 
 while(valor != "ESC") {
     alert ("El usuario ingresó: " + valor)
-    valor = prompt("ESC para salir")
+    valor = prompt("Escribe ESC para salir")
 }
