@@ -14,9 +14,11 @@ if(NOMBRE != "") {
         alert(NOMBRE + " " + "¡Felicitaciones aprobaste!" + " " + "Tu nota es: " + " " + promedio.toFixed(0))
     }
     else {
-        alert(NOMBRE + " " + "No aprobaste." + " " + "Tu nota es: " + " " + promedio.toFixed(0))
+        alert(NOMBRE + " " + "No aprobaste." + " " + "Tu nota es: " + " " + promedio.toFixed(1))
     }
 }
+
+//Si NOMBRE vacio entonces entra al while
 
 let valor = prompt("ESC para salir")
 
