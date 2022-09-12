@@ -17,10 +17,7 @@ function mostrarResultado(resultado) {
     console.log(obj)
 }
 
-/* Base de datos manual */
-
-
-
+/* Base de datos manual con objeto*/
 
 function mostrarMenu() {
     let opcion = prompt(
