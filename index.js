@@ -1,19 +1,30 @@
 /* La constante es usada para personalizar la función con el nombre de la persona. */
-const NOMBRE = prompt ("Ingresa tu nombre")
 
+const NOMB = prompt ("Ingresa tu nombre")
+const APE = prompt ("Ingresa tu apellido")
 /* Función promedio*/ 
-function promedio(numeroUno, numeroDos) {
-    let resultado = (numeroUno + numeroDos) / 2;
+function cuenta(numeroUno, numeroDos) {
+    let resultado = (numeroUno / numeroDos) * 0.12 + (numeroUno / numeroDos);
     return resultado;
 }
 
+/* En consola muestre con Arrays los prestamos realizados */
 function mostrarResultado(resultado) {
-    alert(NOMBRE + "." + " " + "El resultado del promedio es: " + resultado);
+    alert(NOMB + "." + " " + "El monto por cuota es: " + " " + "$" + resultado);
+    const arrayNombresPrestamo = [NOMB, APE, resultado];
+    console.log(arrayNombresPrestamo)
+    const obj = Object.assign({}, arrayNombresPrestamo);
+    console.log(obj)
 }
+
+/* Base de datos manual */
+
+
+
 
 function mostrarMenu() {
     let opcion = prompt(
-        "Bienvenido" + " " + NOMBRE, " " + "selecciona una opción o S para salir\n1. Promedio"
+        "Selecciona una opción o S para salir\n1 Prestamo"
     );
     return opcion;
 }
@@ -26,17 +37,18 @@ function calculadora() {
 
         //isNaN nos sirve para saber si el contenido de una variable es NaN
         if (!isNaN(opcionSeleccionada)) {
-            let numeroUno = parseFloat(prompt("Ingrese el primer numero"));
-            let numeroDos = parseFloat(prompt("Ingrese el segundo numero"));
+            let numeroUno = parseFloat(prompt("Ingrese monto en pesos a retirar"));
+            let numeroDos = parseFloat(prompt("Ingrese el numero de cuotas"));
             switch (opcionSeleccionada) {
             case 1:
-                let resultadoPromedio = promedio(numeroUno, numeroDos);
-                mostrarResultado(resultadoPromedio)
+                let resultadoCuenta = cuenta(numeroUno, numeroDos);
+                mostrarResultado(resultadoCuenta)
                 break;  
             
                 default:
                 alert("Opcion Incorrecta");
                 break;
+
             }
         } else {
             alert("Ingresó una letra");
