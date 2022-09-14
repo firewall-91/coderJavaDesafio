@@ -100,7 +100,6 @@ function imprimirCarrito() {
         });
         // Cuenta el número de veces que se repite el producto(aca me tranque)
         const UNIDADESITEM = carrito.reduce((total, itemId) => {
-            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
         }, 0);
         // Creamos el nodo del item del carrito
