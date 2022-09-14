@@ -2,30 +2,18 @@
 
 // Constantes
 const BASEDEDATOS = [
-    {
-        id: 1,
-        nombre: 'Ralph Lauren Polo Blue',
-        precio: 6050,
-        imagen: './media/poloBlue.jpg'
-    },
-    {
-        id: 2,
-        nombre: 'Carolina Herrera 212 Vip Men',
-        precio: 5649,
-        imagen: './media/cH212VipMen.jpg'
-    },
-    {
-        id: 3,
-        nombre: 'Carolina Herrera Good Girl',
-        precio: 6990,
-        imagen: './media/cHGoodGirl.jpg'
-    },
-    {
-        id: 4,
-        nombre: 'Lancome La Vie Est Belle',
-        precio: 7890,
-        imagen: './media/laVieEstBelle.jpg'
-    }
+        {
+            id: 1, nombre: 'Ralph Lauren Polo Blue', precio: 6050, imagen: './media/poloBlue.jpg'
+        },
+        {
+            id: 2, nombre: 'Carolina Herrera 212 Vip Men', precio: 5649, imagen: './media/cH212VipMen.jpg'
+        },
+        {
+            id: 3, nombre: 'Carolina Herrera Good Girl', precio: 6990, imagen: './media/cHGoodGirl.jpg'
+        },
+        {
+            id: 4, nombre: 'Lancome La Vie Est Belle', precio: 7890, imagen: './media/laVieEstBelle.jpg'
+        }
 ];
 
 /* Podria agregar mas elementos pero de momento voy a usar estos para Coderhouse */
