@@ -130,7 +130,7 @@ function borrarItemCarrito(evento) {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
-    // volvemos a renderizar
+    // volvemos a imprimir
     imprimirCarrito();
 }
 /**
@@ -147,17 +147,14 @@ function calcularTotal() {
         return total + ITEM[0].precio;
     }, 0).toFixed(0);
 }
-/**
- * Varia el carrito y vuelve a dibujarlo
- */
+
 function vaciarCarrito() {
     // Limpiamos los productos guardados
     carrito = [];
-    // Renderizamos los cambios
     imprimirCarrito();
 }
 // Eventos
 DOMBOTONVACIAR.addEventListener('click', vaciarCarrito);
-// Inicio
+
 imprimirProductos();
 imprimirCarrito();
