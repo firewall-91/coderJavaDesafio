@@ -1,7 +1,7 @@
 /* Nota mental: dividir el problema en partes pequeñas */
 
-// Variables
-const baseDeDatos = [
+// Constantes
+const BASEDEDATOS = [
     {
         id: 1,
         nombre: 'Ralph Lauren Polo Blue',
@@ -31,96 +31,95 @@ const baseDeDatos = [
 /* Podria agregar mas elementos pero de momento voy a usar estos para Coderhouse */
 
 let carrito = [];
-const divisa = '$';
-const DOMitems = document.querySelector('#items');
-const DOMcarrito = document.querySelector('#carrito');
-const DOMtotal = document.querySelector('#total');
-const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+const MONEDA = '$';
+const DOMITEMS = document.querySelector('#items');
+const DOMCARRITO = document.querySelector('#carrito');
+const DOMTOTAL = document.querySelector('#total');
+const DOMBOTONVACIAR = document.querySelector('#boton-vaciar');
 // Funciones
 /**
  * Sketch de todos los productos a partir de la base de datos. No confundir con el carrito
  */
-function renderizarProductos() {
-    baseDeDatos.forEach((info) => {
+function imprimirProductos() {
+    BASEDEDATOS.forEach((info) => {
         // Estructura
-        const miNodo = document.createElement('div');
-        miNodo.classList.add('card', 'col-sm-4');
+        const NODO = document.createElement('div');
+        NODO.classList.add('card', 'col-sm-4');
         // Body
-        const miNodoCardBody = document.createElement('div');
-        miNodoCardBody.classList.add('card-body');
+        const NODOCARDBODY = document.createElement('div');
+        NODOCARDBODY.classList.add('card-body');
         // Titulo
-        const miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
-        miNodoTitle.textContent = info.nombre;
+        const NODOTITULO = document.createElement('h5');
+        NODOTITULO.classList.add('card-title');
+        NODOTITULO.textContent = info.nombre;
         // Imagen
-        const miNodoImagen = document.createElement('img');
-        miNodoImagen.classList.add('img-fluid');
-        miNodoImagen.setAttribute('src', info.imagen);
+        const NODOIMAGEN = document.createElement('img');
+        NODOIMAGEN.classList.add('img-fluid');
+        NODOIMAGEN.setAttribute('src', info.imagen);
         // Precio
-        const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `${divisa}${info.precio}`;
+        const NODOPRECIO = document.createElement('p');
+        NODOPRECIO.classList.add('card-text');
+        NODOPRECIO.textContent = `${MONEDA}${info.precio}`;
         // Boton 
-        const miNodoBoton = document.createElement('button');
-        miNodoBoton.classList.add('btn', 'btn-primary');
-        miNodoBoton.textContent = '+';
-        miNodoBoton.setAttribute('marcador', info.id);
-        miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+        const NODOBOTON = document.createElement('button');
+        NODOBOTON.classList.add('btn', 'btn-primary');
+        NODOBOTON.textContent = '+';
+        NODOBOTON.setAttribute('marcador', info.id);
+        NODOBOTON.addEventListener('click', aniadirProductoAlCarrito);
         // Insertamos
-        miNodoCardBody.appendChild(miNodoImagen);
-        miNodoCardBody.appendChild(miNodoTitle);
-        miNodoCardBody.appendChild(miNodoPrecio);
-        miNodoCardBody.appendChild(miNodoBoton);
-        miNodo.appendChild(miNodoCardBody);
-        DOMitems.appendChild(miNodo);
+        NODOCARDBODY.appendChild(NODOIMAGEN);
+        NODOCARDBODY.appendChild(NODOTITULO);
+        NODOCARDBODY.appendChild(NODOPRECIO);
+        NODOCARDBODY.appendChild(NODOBOTON);
+        NODO.appendChild(NODOCARDBODY);
+        DOMITEMS.appendChild(NODO);
     });
 }
 /**
  * Evento para añadir un producto al carrito de la compra
  */
-function anyadirProductoAlCarrito(evento) {
+function aniadirProductoAlCarrito(evento) {
     // Añadimos el nodo a nuestro carrito
     carrito.push(evento.target.getAttribute('marcador'))
     // Actualizamos el carrito 
-    renderizarCarrito();
+    imprimirCarrito();
 }
 /**
  * Sketch de todos los productos guardados en el carrito
  */
-function renderizarCarrito() {
+function imprimirCarrito() {
     // Vaciamos todo el html
-    DOMcarrito.textContent = '';
+    DOMCARRITO.textContent = '';
     // Quitamos los duplicados
-    const carritoSinDuplicados = [...new Set(carrito)];
+    const SINDUPLICADOS = [...new Set(carrito)];
     // Generamos los Nodos a partir de carrito
-    carritoSinDuplicados.forEach((item) => {
-        // Obtenemos el item que necesitamos de la variable base de datos
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            // ¿Coincide las id? Solo puede existir un caso
+    SINDUPLICADOS.forEach((item) => {
+        // Obtenemos el item que necesitamos de la constante base de datos
+        const ITEM = BASEDEDATOS.filter((itemBaseDatos) => {
             return itemBaseDatos.id === parseInt(item);
         });
         // Cuenta el número de veces que se repite el producto(aca me tranque)
-        const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+        const UNIDADESITEM = carrito.reduce((total, itemId) => {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
         }, 0);
         // Creamos el nodo del item del carrito
-        const miNodo = document.createElement('li');
-        miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${divisa}${miItem[0].precio}`;
+        const NODO = document.createElement('li');
+        NODO.classList.add('list-group-item', 'text-right', 'mx-2');
+        NODO.textContent = `${UNIDADESITEM} x ${ITEM[0].nombre} - ${MONEDA}${ITEM[0].precio}`;
         // Boton de borrar
-        const miBoton = document.createElement('button');
-        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-        miBoton.textContent = 'X';
-        miBoton.style.marginLeft = '1rem';
-        miBoton.dataset.item = item;
-        miBoton.addEventListener('click', borrarItemCarrito);
+        const BOTON = document.createElement('button');
+        BOTON.classList.add('btn', 'btn-danger', 'mx-5');
+        BOTON.textContent = 'X';
+        BOTON.style.marginLeft = '1rem';
+        BOTON.dataset.item = item;
+        BOTON.addEventListener('click', borrarItemCarrito);
         // Mezclamos nodos
-        miNodo.appendChild(miBoton);
-        DOMcarrito.appendChild(miNodo);
+        NODO.appendChild(BOTON);
+        DOMCARRITO.appendChild(NODO);
     });
-    // Renderizamos el precio total en el HTML
-    DOMtotal.textContent = calcularTotal();
+    // Imprimimos el precio total en el HTML
+    DOMTOTAL.textContent = calcularTotal();
 }
 /**
  * Evento para borrar un elemento del carrito
@@ -133,7 +132,7 @@ function borrarItemCarrito(evento) {
         return carritoId !== id;
     });
     // volvemos a renderizar
-    renderizarCarrito();
+    imprimirCarrito();
 }
 /**
  * Calcula el precio total teniendo en cuenta los productos repetidos
@@ -142,11 +141,11 @@ function calcularTotal() {
     // Recorremos el array del carrito 
     return carrito.reduce((total, item) => {
         // De cada elemento obtenemos el precio
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+        const ITEM = BASEDEDATOS.filter((itemBaseDatos) => {
             return itemBaseDatos.id === parseInt(item);
         });
         // Los sumamos al total
-        return total + miItem[0].precio;
+        return total + ITEM[0].precio;
     }, 0).toFixed(0);
 }
 /**
@@ -156,10 +155,10 @@ function vaciarCarrito() {
     // Limpiamos los productos guardados
     carrito = [];
     // Renderizamos los cambios
-    renderizarCarrito();
+    imprimirCarrito();
 }
 // Eventos
-DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+DOMBOTONVACIAR.addEventListener('click', vaciarCarrito);
 // Inicio
-renderizarProductos();
-renderizarCarrito();
+imprimirProductos();
+imprimirCarrito();
