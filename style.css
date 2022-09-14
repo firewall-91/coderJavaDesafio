@@ -1,0 +1,42 @@
+.titulo-logo {
+    text-align: center;
+    padding: 2px;
+    margin: auto;
+
+}
+.container {
+    padding: 5px;
+}
+
+.col-sm-4 h2{
+    text-align: center;
+    color: #010D26;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.btn-primary {
+    background-color: #010D26;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #021F59;
+}
+
+.btn-danger {
+    background-color: #010D26;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #021F59;
+}
+
+.card-title {
+    font-size: 16px;
+} 
+
+.terms {
+    text-align: center;
+}
