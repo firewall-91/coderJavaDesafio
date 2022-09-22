@@ -175,6 +175,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // Eventos
   DOMBOTONVACIAR.addEventListener("click", vaciarCarrito);
 
+  //Buscador
+
+  let lista = document.querySelector(".collection");
+  let txtbusca = document.getElementById("search");
+
+  txtbusca.onkeyup = function () {
+    lista.innerHTML = "";
+    let texto = txtbusca.value.toLowerCase();
+
+    for (let BASEDEDATOS2 of BASEDEDATOS) {
+      let res = BASEDEDATOS2.nombre.toLowerCase();
+      if (res.indexOf(texto) !== -1) {
+        lista.innerHTML += `
+        <a href='#' class='collection-item'>${BASEDEDATOS2.nombre}</a>
+      `;
+      }
+    }
+    if (lista.innerHTML == "") {
+      lista.innerHTML = `
+        <a href='#' class='collection-item'>No hay resultados</a>
+        `;
+    }
+  };
+
   cargarCarritoDeLocalStorage();
   imprimirProductos();
   imprimirCarrito();
