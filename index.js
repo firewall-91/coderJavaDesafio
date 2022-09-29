@@ -26,6 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
       precio: 7890,
       imagen: "./media/laVieEstBelle.jpg",
     },
+    {
+      id: 5,
+      nombre: "Paco Rabanne One Million",
+      precio: 7395,
+      imagen: "./media/pacoRabanne.jpg",
+    },
+    {
+      id: 6,
+      nombre: "Set Perfume Scandal",
+      precio: 5349,
+      imagen: "./media/scandal.jpg",
+    },
   ];
 
   /* Podria agregar mas elementos pero de momento voy a usar estos para Coderhouse */
