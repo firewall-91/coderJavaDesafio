@@ -189,27 +189,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Buscador
 
-  let lista = document.querySelector(".collection");
-  let txtbusca = document.getElementById("search");
-
-  txtbusca.onkeyup = function () {
-    lista.innerHTML = "";
-    let texto = txtbusca.value.toLowerCase();
-
-    for (let BASEDEDATOS2 of BASEDEDATOS) {
-      let res = BASEDEDATOS2.nombre.toLowerCase();
-      if (res.indexOf(texto) !== -1) {
-        lista.innerHTML += `
-        <a href='#' class='collection-item'>${BASEDEDATOS2.nombre}</a>
-      `;
+  function myFunction() {
+    let input, filter, cards, cardContainer, title, i;
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("card");
+    cards = cardContainer.getElementsByClassName("card-body");
+    for (i = 0; i < cards.length; i++) {
+      title = cards[i].querySelector(".card-title");
+      if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+        cards[i].style.display = "";
+      } else {
+        cards[i].style.display = "none";
       }
     }
-    if (lista.innerHTML == "") {
-      lista.innerHTML = `
-        <a href='#' class='collection-item'>No hay resultados</a>
-        `;
-    }
-  };
+  }
 
   cargarCarritoDeLocalStorage();
   imprimirProductos();

@@ -1,12 +1,17 @@
-
+.row{
+    padding: 15px;
+    justify-content: center;
+}
 .col-sm-12 {
     width: 300px;
     padding: 2px;
 }
 
-.container {
-    padding: 15px;
+.col-sm-8 row {
+    padding: auto;
+justify-content: center;
 }
+
 
 .col-sm-4 h2 {
     text-align: center;
@@ -63,17 +68,13 @@
     }
     
     .container {
-        max-width: auto;
-        margin: auto;
+        justify-content: center;
     }
     
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-    }
     
     ul {
         list-style: none;
+        padding-left: 0px;
     }
     
     .footer {
