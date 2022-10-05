@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let input, filter, cards, cardContainer, title, i;
     input = document.getElementById("myFilter");
     filter = input.value.toUpperCase();
-    cardContainer = document.getElementById("card");
+    cardContainer = document.getElementById("items");
     cards = cardContainer.getElementsByClassName("card-body");
     for (i = 0; i < cards.length; i++) {
       title = cards[i].querySelector(".card-title");
