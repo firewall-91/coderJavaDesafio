@@ -99,6 +99,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Actualizamos el LocalStorage
     guardarCarritoEnLocalStorage();
   }
+  // Toastify
+  const botonToast = document.getElementById("boton-vaciar");
+  botonToast.onclick = mostrarToast;
+  function mostrarToast() {
+    Toastify({
+      text: "Carrito vacio",
+      duration: 3000,
+      close: true,
+    }).showToast();
+  }  
+
   /**
    * Sketch de todos los productos guardados en el carrito
    */
