@@ -207,6 +207,7 @@
     justify-content: center;
     color: #ffffff;
     background-color: #010D26;
+    pointer-events: none;
 }
 
 .text-right {
@@ -241,3 +242,4 @@ hr {
     justify-content: center;
     
 }
+
