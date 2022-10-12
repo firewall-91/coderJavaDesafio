@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
        .then((data) => {
          BASEDEDATOS = [...data]
          imprimirProductos();
+         imprimirCarrito();
        })
        .catch((error) => console.log(error));
   }
@@ -191,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //cargarCarritoDeLocalStorage();
+  cargarCarritoDeLocalStorage();
   imprimirProductos();
   consultarProductos();
   imprimirCarrito();
