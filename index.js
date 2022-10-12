@@ -1,44 +1,7 @@
 /* Nota mental: dividir el problema en partes pequeñas */
 document.addEventListener("DOMContentLoaded", () => {
   // Constantes
-  const BASEDEDATOS = [
-    {
-      id: 1,
-      nombre: "Ralph Lauren Polo Blue",
-      precio: 6050,
-      imagen: "./media/poloBlue.jpg",
-    },
-    {
-      id: 2,
-      nombre: "Carolina Herrera 212 Vip Men",
-      precio: 5649,
-      imagen: "./media/cH212VipMen.jpg",
-    },
-    {
-      id: 3,
-      nombre: "Carolina Herrera Good Girl",
-      precio: 6990,
-      imagen: "./media/cHGoodGirl.jpg",
-    },
-    {
-      id: 4,
-      nombre: "Lancome La Vie Est Belle",
-      precio: 7890,
-      imagen: "./media/laVieEstBelle.jpg",
-    },
-    {
-      id: 5,
-      nombre: "Paco Rabanne One Million",
-      precio: 7395,
-      imagen: "./media/pacoRabanne.jpg",
-    },
-    {
-      id: 6,
-      nombre: "Set Perfume Scandal",
-      precio: 5349,
-      imagen: "./media/scandal.jpg",
-    },
-  ];
+  let BASEDEDATOS = [];
 
   /* Podria agregar mas elementos pero de momento voy a usar estos para Coderhouse */
 
@@ -88,6 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
       DOMITEMS.appendChild(NODO);
     });
   }
+
+  //JSON
+  async function consultarProductos() {
+    fetch("./basededatos.json")
+       .then((response) => response.json())
+       .then((data) => {
+         BASEDEDATOS = [...data]
+         imprimirProductos();
+       })
+       .catch((error) => console.log(error));
+  }
+
   /**
    * Evento para añadir un producto al carrito de la compra
    */
@@ -216,7 +191,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  cargarCarritoDeLocalStorage();
+  //cargarCarritoDeLocalStorage();
   imprimirProductos();
+  consultarProductos();
   imprimirCarrito();
 });
