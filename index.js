@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const DOMTOTAL = document.querySelector("#total");
   const DOMBOTONVACIAR = document.querySelector("#boton-vaciar");
   const LOCSTORAGE = window.localStorage;
+  const BOTONCOMPRAR = document.getElementById("btnComprar")
+  BOTONCOMPRAR.onclick = mostrarSwAlert
   // Funciones
   /**
    * Sketch de todos los productos a partir de la base de datos. No confundir con el carrito
@@ -85,6 +87,14 @@ document.addEventListener("DOMContentLoaded", () => {
       close: true,
     }).showToast();
   }  
+
+function mostrarSwAlert () {
+  Swal.fire({
+    icon: "success",
+    title: "Compra realizada"
+  })
+  vaciarCarrito()
+}
 
   /**
    * Sketch de todos los productos guardados en el carrito

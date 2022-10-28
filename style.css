@@ -3,9 +3,6 @@
     justify-content: center;
 }
 
-
-
-
 .col-sm-4 h2 {
     text-align: center;
     color: #010D26;
@@ -230,13 +227,27 @@ hr {
     width: 600px;
 }
 
+.btn-group {
+    justify-content: center;
+    width: 300px;
+    padding: 2px;
+    margin: auto;
+    display: flex;
+}
 
-
+.compr {
+    width: 80px;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .vac {
     width: 80px;
     padding: 5px;
-    margin: auto;
+    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
