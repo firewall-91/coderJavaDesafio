@@ -33,5 +33,23 @@
     "nombre": "Set Perfume Scandal",
     "precio": 5349,
     "imagen": "./media/scandal.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Ralph Lauren Ralph's Club",
+    "precio": 7890,
+    "imagen": "./media/"
+  },
+  {
+    "id": 8,
+    "nombre": "Paco Rabanne One Million",
+    "precio": 7395,
+    "imagen": "./media/"
+  },
+  {
+    "id": 9,
+    "nombre": "Set Perfume Scandal",
+    "precio": 5349,
+    "imagen": "./media/scandal.jpg"
   }
 ]

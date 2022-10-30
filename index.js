@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }).showToast();
   }  
 
+//SweetAlert
 function mostrarSwAlert () {
   Swal.fire({
     icon: "success",
@@ -183,24 +184,6 @@ function mostrarSwAlert () {
   }
   // Eventos
   DOMBOTONVACIAR.addEventListener("click", vaciarCarrito);
-
-  //Buscador
-
-  function myFunction() {
-    let input, filter, cards, cardContainer, title, i;
-    input = document.getElementById("myFilter");
-    filter = input.value.toUpperCase();
-    cardContainer = document.getElementById("items");
-    cards = cardContainer.getElementsByClassName("card-body");
-    for (i = 0; i < cards.length; i++) {
-      title = cards[i].querySelector(".card-title");
-      if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-        cards[i].style.display = "";
-      } else {
-        cards[i].style.display = "none";
-      }
-    }
-  }
 
   cargarCarritoDeLocalStorage();
   imprimirProductos();
