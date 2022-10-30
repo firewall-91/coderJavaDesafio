@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       NODOBOTON.textContent = "+";
       NODOBOTON.setAttribute("marcador", info.id);
       NODOBOTON.addEventListener("click", aniadirProductoAlCarrito);
+      NODOBOTON.addEventListener("click", productoAgregadoToast);
       // Insertamos
       NODOCARDBODY.appendChild(NODOIMAGEN);
       NODOCARDBODY.appendChild(NODOTITULO);
@@ -83,10 +84,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function mostrarToast() {
     Toastify({
       text: "Carrito vacio",
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
       duration: 3000,
       close: true,
     }).showToast();
   }  
+
+  function productoAgregadoToast() {
+    Toastify({
+      text: "Producto agregado",
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+      duration: 3000,
+      close: true,
+    }).showToast();
+  }    
 
 //SweetAlert
 function mostrarSwAlert () {
