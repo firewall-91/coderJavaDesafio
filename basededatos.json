@@ -37,19 +37,19 @@
   {
     "id": 7,
     "nombre": "Ralph Lauren Ralph's Club",
-    "precio": 7890,
-    "imagen": "./media/"
+    "precio": 7590,
+    "imagen": "./media/rLaurenRalphsClub.jpg"
   },
   {
     "id": 8,
-    "nombre": "Paco Rabanne One Million",
-    "precio": 7395,
-    "imagen": "./media/"
+    "nombre": "Diesel Sound Of The Brave",
+    "precio": 4180,
+    "imagen": "./media/dSoundOfTheBrave.jpg"
   },
   {
     "id": 9,
-    "nombre": "Set Perfume Scandal",
-    "precio": 5349,
-    "imagen": "./media/scandal.jpg"
+    "nombre": "Lancome Idole",
+    "precio": 5990,
+    "imagen": "./media/lIdole.jpg"
   }
 ]
